@@ -7,4 +7,4 @@ for i in range(T):
     a=list(map(int, input().split()))
     temp = a[s-1:e]
     temp.sort()
-    print(temp[k-1])
+    print("#%d %d" %(i+1, temp[k-1]))
