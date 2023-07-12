@@ -23,4 +23,6 @@ while True:
     num += 1
 
 for i in range(N):
-    print(a[i])
+    for j in range(N):
+        print(a[i][j],end=" ")
+    print()
