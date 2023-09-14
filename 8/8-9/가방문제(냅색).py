@@ -2,7 +2,6 @@ import sys
 sys.stdin=open("in1.txt", "r")
 
 n, limit = map(int, input().split())
-arr = []
 dy = [0 for _ in range(limit+1)]
 
 for i in range(n):
@@ -13,4 +12,4 @@ for i in range(n):
         # if temp > dy[j]:
         #     dy[j] = temp
 
-print(dy)
+print(dy[-1])
