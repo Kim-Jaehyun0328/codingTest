@@ -11,17 +11,6 @@ def DFS(n):
         return a[n]
 
 
-    if a[n-1] == 0:
-        temp += DFS(n-1)
-    else:
-        temp += a[n-1]
-    if a[n-2] == 0:
-        temp += DFS(n-2)
-    else:
-        temp += a[n-1]
-    return temp
-
-
 
 if __name__ == "__main__":
     n = int(input())
