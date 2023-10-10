@@ -26,7 +26,7 @@ def topology_sort():
         if indegree[i] == 0:
             q.append(i)
 
-    while q:
+    while q:w
         now = q.popleft()
         for i in graph[now]:
             result[i] = max(result[i], result[now] + time[i])
