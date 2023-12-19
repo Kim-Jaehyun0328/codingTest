@@ -1,18 +1,15 @@
-N, M, K = 5, 7, 2
+n, m, k = 5, 8, 3
+data = [2, 4, 5, 4, 6]
+ans = 0
+data.sort(reverse= True)
 
-l = [3,4,3,4,3]
-answer = 0
-
-
-l.sort(reverse= True)
-
-cnt = 0
-
-for i in range(M):
-    if cnt < K:
-        answer += l[0]
-        cnt += 1
+ch = 0
+for i in range(m):
+    if ch < k:
+        ans += data[0]
+        ch += 1
     else:
-        cnt = 0
-        answer += l[1]
-print(answer)
+        ch = 0
+        ans += data[1]
+
+print(ans)
