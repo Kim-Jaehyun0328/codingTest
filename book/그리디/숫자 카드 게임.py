@@ -1,8 +1,19 @@
-N, M = 2, 4
+# N, M = 2, 4
+#
+# cards = [[7,3,1,8],[3,3,3,4]]
+# min_list = []
+# for x in cards:
+#     min_list.append(min(x))
+#
+# print(max(min_list))
 
-cards = [[7, 3], [3,3],[1,3],[8,4]]
-min_list = []
-for x in cards:
-    min_list.append(min(x))
+n, m = 4,2
+cards = [[7,3,1,8],[3,3,3,4]]
+ans = -1e9
 
-print(min_list.index(max(min_list)))
+for card in cards:
+    min_num = min(card)
+    if min_num > ans:
+        ans = min_num
+
+print(ans)
