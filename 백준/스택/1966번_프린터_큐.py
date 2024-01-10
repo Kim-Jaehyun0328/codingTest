@@ -20,25 +20,28 @@
 #             idx += 1
 
 
+import sys
 from collections import deque
-n, find = 6, 0
-num = [1,1,9,1,1,1]
-idx = 0
-ans = 1
-pList = []
 
-for i in range(n):
-    pList.append((i, num[i]))
+T = int(sys.stdin.readline())
 
-pList = deque(pList)
+for _ in range(T):
+    n, find = map(int, sys.stdin.readline().split())
+    num = list(map(int, sys.stdin.readline().split()))
+    idx = 0
+    ans = 1
+    pList = []
+    for i in range(n):
+        pList.append((i, num[i]))
+    pList = deque(pList)
 
-while True:
-    max_num = max([item[1] for item in pList])
-    if pList[0][1] == max_num:
-        if pList[0][0] == find:
-            print(ans)
-            break
-        pList.popleft()
-        ans += 1
-    else:
-        pList.append(pList.popleft())
+    while True:
+        max_num = max([item[1] for item in pList])
+        if pList[0][1] == max_num:
+            if pList[0][0] == find:
+                print(ans)
+                break
+            pList.popleft()
+            ans += 1
+        else:
+            pList.append(pList.popleft())
