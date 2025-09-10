@@ -28,12 +28,22 @@ public class Main {
             //temp는 현재 위치를 나타냄
             int[] temp = q.poll();
             //최소값이 나왔다면
-            if (temp[0] == K) {
-                if (temp[1] < min) {
+//            if (temp[0] == K) {
+//                if (temp[1] < min) {
+//                    min = temp[1];
+//                    ans = 1;
+//                } else if (temp[1] == min) {
+//                    ans++;
+//                }
+//            }
+
+            if(temp[0] == K) {
+                if(!flag) {
+                    flag = true;
                     min = temp[1];
-                    ans = 1;
-                } else if (temp[1] == min) {
                     ans++;
+                } else {
+                    if(min == temp[1]) ans++;
                 }
             }
             int pos = temp[0], sec = temp[1];
