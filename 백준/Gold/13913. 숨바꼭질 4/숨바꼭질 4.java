@@ -26,17 +26,15 @@ public class Main {
 
             if(pos==K) {
                 System.out.println(ch[pos][0]);
-                Stack<Integer> stack = new Stack<>();
+                ArrayList<Integer> arr = new ArrayList<>();
                 int temp = K;
                 while (temp != N) {
-                    stack.push(temp);
+                    arr.add(temp);
                     temp = ch[temp][1];
                 }
-                stack.push(N);
-
-                while (!stack.isEmpty()) {
-                    System.out.print(stack.pop() + " ");
-                }
+                arr.add(N);
+                Collections.reverse(arr);
+                for (int x : arr) System.out.print(x + " ");
             }
 
             if(pos-1 > -1 && !visited[pos-1]) {
