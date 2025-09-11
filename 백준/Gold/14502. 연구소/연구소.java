@@ -10,7 +10,6 @@ public class Main {
 
     static int N, M;
     static int[][] arr;
-    static boolean[][] ch;
     static ArrayList<int[]> virus = new ArrayList<>();
 
     static int[] dx = new int[]{-1,0,1,0};
@@ -20,12 +19,6 @@ public class Main {
     static void bfs() {
         int[][] arrTemp = new int[N][M];
         for (int i = 0; i < N; i++) arrTemp[i] = arr[i].clone();
-//        for(int i=0; i<N; i++) {
-//            for(int j=0; j<M; j++) {
-//                System.out.print(arrTemp[i][j] + " ");
-//            }
-//            System.out.println();
-//        }
         for (int[] ints : virus) {
             Queue<int[]> q = new LinkedList<>();
             q.offer(ints);
@@ -58,11 +51,9 @@ public class Main {
             for(int i=x; i<N; i++) {
                 for(int j=0; j<M; j++) {
                     //방문하지 않은 빈 공간이라면
-                    if(arr[i][j] == 0 && !ch[i][j]) {
-                        ch[i][j] = true;
+                    if(arr[i][j] == 0) {
                         arr[i][j] = 1;
                         dfs(i,j, depth+1);
-                        ch[i][j] = false;
                         arr[i][j] = 0;
                     }
                 }
@@ -76,7 +67,6 @@ public class Main {
         N = Integer.parseInt(st.nextToken());
         M = Integer.parseInt(st.nextToken());
         arr = new int[N][M];
-        ch = new boolean[N][M];
         for(int i=0; i<N; i++) {
             st = new StringTokenizer(br.readLine());
             for(int j=0; j<M; j++) {
