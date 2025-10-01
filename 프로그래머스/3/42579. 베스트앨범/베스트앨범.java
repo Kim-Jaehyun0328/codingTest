@@ -29,11 +29,11 @@ class Solution {
         
         
         ArrayList<Integer> temp = new ArrayList<>();
-        ArrayList<Map.Entry<String, Integer>> genreList = new ArrayList<>(most.entrySet());
-        genreList.sort((a, b) -> b.getValue() - a.getValue());
+        ArrayList<String> genreList = new ArrayList<>(most.keySet());
+        genreList.sort((a, b) -> most.get(b) - most.get(a));
         
-        for(Map.Entry<String, Integer> entry : genreList) {
-            String key = entry.getKey();
+        for(String entry : genreList) {
+            String key = entry;
             ArrayList<Type> arr = map.get(key);
             Collections.sort(map.get(key));
             temp.add(arr.get(0).index);
