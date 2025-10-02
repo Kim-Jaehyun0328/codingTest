@@ -27,10 +27,6 @@ class Solution {
         }
         arr.add(cnt);
         
-        for(int n : arr) {
-            System.out.println(n);
-        }
-        
         answer = arr.stream().mapToInt(i->i).toArray();
         return answer;
     }
