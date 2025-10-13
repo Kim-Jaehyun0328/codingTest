@@ -6,8 +6,8 @@ class Solution {
         int w = Integer.MIN_VALUE;
         for(int[] size: sizes) {
             Arrays.sort(size);
-            if(h < size[0]) h = size[0];
-            if(w < size[1]) w = size[1];
+            h = Math.max(h, size[0]);
+            w = Math.max(w, size[1]);
         }
         
         return h*w;
